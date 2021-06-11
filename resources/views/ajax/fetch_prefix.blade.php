@@ -1,0 +1,1 @@
+<div id="prefix"><input type='hidden' name='comp_prefix' value='{{$company->company_prefix}}' required></div>

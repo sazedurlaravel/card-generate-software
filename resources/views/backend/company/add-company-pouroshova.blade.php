@@ -1,0 +1,119 @@
+@extends('backend.layouts.master')
+
+@section('content-wrapper')
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Add Company (Pouroshova)</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
+              <li class="breadcrumb-item active">Add Company(Pouroshova)</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+@endsection
+@section('content')
+
+ <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                Add Company(Pouroshova)
+                </h3>
+               
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+              
+                <table id="example1" class="table table-bordered table-striped" >
+
+                  <form action="{{route('pouro.store')}}" method="POST" >
+                    @csrf
+                      <div class="form-row u">
+                        <div class="col-md-6 form-group">
+                          <label>Company Name</label>
+                          <input class="form-control" type="text" name="name" placeholder="Enter Company Name" class="@error('name') is-invalid @enderror">
+                            @error('name')
+                                <div class="alert" style="color: red">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label>Pouroshova Name</label>
+                          <input class="form-control" type="text" name="pouroshova_name" placeholder="Enter Poroshova Name" class="@error('name') is-invalid @enderror">
+                            @error('pouroshova_name')
+                                <div class="alert" style="color: red">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <label>Address</label>
+                          <input class="form-control" type="text" name="address" placeholder="Enter Address" class="@error('name') is-invalid @enderror">
+                            @error('address')
+                                <div class="alert" style="color: red">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                          <label>Url</label>
+                          <input class="form-control" type="text" name="url" placeholder="Enter URL" class="@error('name') is-invalid @enderror">
+                            @error('url')
+                                <div class="alert" style="color: red">{{ $message }}</div>
+                            @enderror
+                        </div>
+                       
+                        <div class="col-md-6 form-group">
+                          <label>Company Prefix</label>
+                          <input class="form-control" type="text"placeholder="Enter Card Prefix" name="company_prefix" >
+                          @error('company_prefix')
+                          <div class="alert" style="color: red">{{ $message }}</div>
+                            @enderror
+                        </div>
+                      </div> 
+                     
+                      </div> 
+                      <div class="form-row u" >
+                        <div class="col-md-12 form-group">
+                            <label>Comments</label>
+                           <textarea name="comments" id="" cols="30" rows="5" class="form-control" placeholder="Enter Your Comments Here" ></textarea>
+                          </div>
+                    </div> 
+                    <div class="form-row u">
+                        <div class="col-md-6 form-group">
+                         <button type="submit" class="btn btn-success">
+                          Submit
+                       </button>
+                       </div>  
+                   </form>
+
+                   
+                   
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+@endsection
+
+@section('scripts')
+
+{{-- <script>
+  $(document).ready(function(){
+    $(".p").hide();
+    $(".u").hide();
+    $("#p").click(function(){
+      $(".u").hide();
+      $(".p").show();
+    });
+    $("#union").click(function(){
+      $(".u").show();
+      $(".p").hide();
+    });
+  });
+  </script> --}}
+    
+@endsection
